@@ -3,44 +3,52 @@
 <head>
   <%- include('../partials/head') %>
 </head>
-<body class="login-body">
-  <main class="login-shell">
-    <section class="login-panel glass-card">
-      <div class="login-badge">Nexus CRM</div>
-      <h1>Welcome back</h1>
-      <p class="muted">Sign in to manage opportunities, customers, and internal CRM workflows.</p>
+<body class="login-body ebolt-login-body">
+  <header class="login-brand-header" aria-label="Application brand">
+    <div class="ebolt-brand-mark" aria-hidden="true">
+      <span></span>
+    </div>
+    <strong>Ebolt</strong>
+  </header>
+
+  <main class="login-shell ebolt-login-shell">
+    <section class="login-panel ebolt-login-card" aria-labelledby="login-title">
+      <div class="login-card-icon" aria-hidden="true">
+        <span>↪</span>
+      </div>
+
+      <h1 id="login-title">Sign in with email</h1>
+      <p class="login-subtitle">Make a new doc to bring your words, data,<br />and teams together. For free</p>
 
       <% if (error) { %>
         <div class="alert"><%= error %></div>
       <% } %>
 
-      <form class="login-form" action="/login" method="POST">
-        <label for="username">Username</label>
-        <input id="username" name="username" type="text" placeholder="admin" autocomplete="username" required />
+      <form class="login-form ebolt-login-form" action="/login" method="POST">
+        <div class="input-wrap">
+          <span class="field-icon" aria-hidden="true">✉</span>
+          <input id="username" name="username" type="text" placeholder="Email" autocomplete="username" required />
+        </div>
 
-        <label for="password">Password</label>
-        <input id="password" name="password" type="password" placeholder="Password123!" autocomplete="current-password" required />
+        <div class="input-wrap password-wrap">
+          <span class="field-icon" aria-hidden="true">🔒</span>
+          <input id="password" name="password" type="password" placeholder="Password" autocomplete="current-password" required />
+          <span class="field-icon right" aria-hidden="true">◒</span>
+        </div>
 
-        <button class="primary-button" type="submit">Sign in</button>
+        <a class="forgot-link" href="#">Forgot password?</a>
+
+        <button class="primary-button ebolt-primary-button" type="submit">Get Started</button>
       </form>
 
-      <div class="divider-text"><span>or</span></div>
+      <div class="divider-text ebolt-divider"><span>Or sign in with</span></div>
 
-      <a class="entra-button" href="/auth/entra">
-        <span class="microsoft-grid"><i></i><i></i><i></i><i></i></span>
-        Continue with Microsoft Entra ID
+      <a class="entra-icon-button" href="/auth/entra" aria-label="Continue with Microsoft Entra ID">
+        <span class="entra-id-mark" aria-hidden="true">
+          <i></i><i></i><i></i><i></i>
+        </span>
+        <span>Microsoft Entra ID</span>
       </a>
-    </section>
-
-    <section class="login-preview glass-card">
-      <div class="preview-topline"></div>
-      <h2>Lightweight CRM workspace</h2>
-      <p>Pipeline, contacts, dashboard metrics, settings, and Azure SQL-ready data access.</p>
-      <div class="mini-cards">
-        <div><strong>Pipeline</strong><span>Coming soon</span></div>
-        <div><strong>Revenue</strong><span>Placeholder</span></div>
-        <div><strong>Tasks</strong><span>Ready for expansion</span></div>
-      </div>
     </section>
   </main>
 </body>

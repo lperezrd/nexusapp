@@ -34,30 +34,163 @@ body {
   border-radius: 24px;
 }
 
+/* Login screen */
 .login-body {
   display: grid;
   place-items: center;
   padding: 32px;
+  min-height: 100vh;
+}
+
+.ebolt-login-body {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 11% 47%, rgba(255,255,255,0.9) 0 2.4rem, transparent 5.4rem),
+    radial-gradient(circle at 17% 52%, rgba(255,255,255,0.85) 0 4.8rem, transparent 9rem),
+    radial-gradient(circle at 26% 60%, rgba(255,255,255,0.78) 0 6.5rem, transparent 12rem),
+    radial-gradient(circle at 79% 57%, rgba(255,255,255,0.88) 0 5.4rem, transparent 11rem),
+    radial-gradient(circle at 92% 67%, rgba(255,255,255,0.94) 0 8rem, transparent 14rem),
+    radial-gradient(circle at 48% 78%, rgba(255,255,255,0.96) 0 14rem, transparent 24rem),
+    linear-gradient(180deg, #93d5ef 0%, #d9f0fa 46%, #f8fbff 100%);
+}
+
+.ebolt-login-body::before {
+  content: "";
+  position: absolute;
+  width: 780px;
+  height: 420px;
+  left: 50%;
+  top: 44%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(255,255,255,0.68);
+  border-bottom: 0;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  opacity: .75;
+  pointer-events: none;
+}
+
+.ebolt-login-body::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 40%;
+  background:
+    radial-gradient(circle at 5% 46%, rgba(255,255,255,.98) 0 4rem, transparent 9rem),
+    radial-gradient(circle at 18% 62%, rgba(255,255,255,.94) 0 8rem, transparent 15rem),
+    radial-gradient(circle at 42% 72%, rgba(255,255,255,.95) 0 10rem, transparent 18rem),
+    radial-gradient(circle at 72% 64%, rgba(255,255,255,.96) 0 9rem, transparent 17rem),
+    radial-gradient(circle at 92% 54%, rgba(255,255,255,.97) 0 7rem, transparent 15rem);
+  filter: blur(1px);
+  pointer-events: none;
+}
+
+.login-brand-header {
+  position: fixed;
+  top: 24px;
+  left: 64px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #05070d;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.ebolt-brand-mark {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(145deg, #151923, #2d313b);
+  box-shadow: 0 8px 20px rgba(10, 12, 18, .22);
+}
+
+.ebolt-brand-mark span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: block;
+  background:
+    radial-gradient(circle at 62% 38%, #ffffff 0 2px, transparent 2.4px),
+    conic-gradient(from 30deg, #ffffff, #d8e2ea, #ffffff);
 }
 
 .login-shell {
-  width: min(1040px, 100%);
+  width: min(460px, 100%);
   display: grid;
-  grid-template-columns: 420px 1fr;
-  gap: 24px;
-  align-items: stretch;
+  grid-template-columns: 1fr;
+  align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
-.login-shell.single { grid-template-columns: minmax(320px, 520px); justify-content: center; }
+.ebolt-login-shell {
+  width: min(360px, 100%);
+}
 
-.login-panel, .login-preview {
-  padding: 34px;
+.login-panel {
+  padding: 38px;
+  min-height: 540px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ebolt-login-card {
+  min-height: 434px;
+  padding: 30px 32px 28px;
+  align-items: center;
+  justify-content: flex-start;
+  background: linear-gradient(180deg, rgba(236, 255, 255, .74), rgba(255,255,255,.62));
+  border: 1px solid rgba(84, 143, 174, .25);
+  border-radius: 24px;
+  box-shadow: 0 22px 60px rgba(54, 87, 126, .24), 0 0 0 1px rgba(255,255,255,.35) inset;
+  backdrop-filter: blur(20px) saturate(130%);
+}
+
+.login-card-icon {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 18px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: rgba(255,255,255,.74);
+  border: 1px solid rgba(255,255,255,.85);
+  box-shadow: 0 10px 24px rgba(30, 47, 66, .17), 0 3px 8px rgba(30,47,66,.08) inset;
+  color: #20232b;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.login-card-icon span {
+  transform: rotate(180deg) translateY(1px);
+  display: inline-block;
 }
 
 .login-panel h1, .page-header h1 {
   margin: 8px 0 8px;
   font-size: clamp(32px, 4vw, 46px);
   letter-spacing: -0.04em;
+}
+
+.ebolt-login-card h1 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+
+.login-subtitle {
+  margin: 6px 0 20px;
+  color: #606771;
+  text-align: center;
+  line-height: 1.42;
+  font-size: 13.5px;
 }
 
 .login-badge, .eyebrow {
@@ -73,6 +206,47 @@ body {
 .login-form { display: grid; gap: 10px; margin-top: 28px; }
 .login-form label { font-weight: 700; font-size: 13px; }
 
+.ebolt-login-form {
+  width: 100%;
+  margin-top: 0;
+  gap: 8px;
+}
+
+.input-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.input-wrap input {
+  width: 100%;
+  height: 34px;
+  padding: 0 38px;
+  border: 0;
+  border-radius: 10px;
+  background: rgba(220, 227, 234, .62);
+  color: #181b24;
+  font-size: 13px;
+  box-shadow: none;
+}
+
+.input-wrap input::placeholder { color: #6f7681; }
+
+.field-icon {
+  position: absolute;
+  top: 50%;
+  left: 13px;
+  z-index: 1;
+  transform: translateY(-50%);
+  color: #717985;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.field-icon.right {
+  left: auto;
+  right: 13px;
+}
+
 input {
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -83,6 +257,17 @@ input {
 }
 
 input:focus { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(57,210,111,0.15); }
+.input-wrap input:focus { border-color: transparent; box-shadow: 0 0 0 3px rgba(64, 148, 255, .12); }
+
+.forgot-link {
+  justify-self: end;
+  margin-top: 1px;
+  color: #101217;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.forgot-link:hover { text-decoration: underline; }
 
 .primary-button, .entra-button {
   display: inline-flex;
@@ -103,6 +288,19 @@ input:focus { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(57,210,111
   color: #06110a;
 }
 
+.ebolt-primary-button {
+  width: 100%;
+  height: 36px;
+  margin-top: 8px;
+  border-radius: 10px;
+  padding: 0 16px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  background: linear-gradient(180deg, #30313b 0%, #14151d 100%);
+  box-shadow: 0 2px 0 rgba(255,255,255,.12) inset, 0 12px 22px rgba(12,14,20,.18);
+}
+
 .link-button { width: fit-content; }
 
 .entra-button {
@@ -115,42 +313,79 @@ input:focus { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(57,210,111
 .divider-text { display: flex; align-items: center; gap: 12px; color: var(--muted); margin: 22px 0; }
 .divider-text::before, .divider-text::after { content: ""; flex: 1; height: 1px; background: var(--line); }
 
+.ebolt-divider {
+  width: 100%;
+  margin: 16px 0 12px;
+  gap: 8px;
+  color: #767d87;
+  font-size: 10px;
+}
+
+.ebolt-divider::before,
+.ebolt-divider::after {
+  background: linear-gradient(90deg, rgba(90,96,112,.12), rgba(90,96,112,.32), rgba(90,96,112,.12));
+}
+
 .microsoft-grid { display: grid; grid-template-columns: repeat(2, 8px); grid-template-rows: repeat(2, 8px); gap: 2px; }
 .microsoft-grid i:nth-child(1) { background: #f25022; }
 .microsoft-grid i:nth-child(2) { background: #7fba00; }
 .microsoft-grid i:nth-child(3) { background: #00a4ef; }
 .microsoft-grid i:nth-child(4) { background: #ffb900; }
 
+.entra-icon-button {
+  width: 100%;
+  height: 42px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 11px;
+  background: rgba(255,255,255,.54);
+  border: 1px solid rgba(198, 211, 222, .65);
+  box-shadow: 0 12px 18px rgba(52, 75, 104, .08);
+  color: #171b23;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.entra-icon-button:hover {
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.74);
+}
+
+.entra-id-mark {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+}
+
+.entra-id-mark i {
+  position: absolute;
+  display: block;
+  border-radius: 7px;
+  background: linear-gradient(135deg, #0f6cbd, #55b3ff);
+  box-shadow: 0 4px 10px rgba(15,108,189,.24);
+}
+
+.entra-id-mark i:nth-child(1) { width: 12px; height: 12px; left: 5px; top: 0; transform: rotate(45deg); }
+.entra-id-mark i:nth-child(2) { width: 10px; height: 10px; left: 0; top: 9px; transform: rotate(45deg); opacity: .8; }
+.entra-id-mark i:nth-child(3) { width: 10px; height: 10px; right: 0; top: 9px; transform: rotate(45deg); opacity: .8; }
+.entra-id-mark i:nth-child(4) { width: 8px; height: 8px; left: 7px; bottom: 0; transform: rotate(45deg); opacity: .95; }
+
 .alert {
-  margin-top: 20px;
-  padding: 12px 14px;
-  border-radius: 14px;
+  width: 100%;
+  margin: 0 0 14px;
+  padding: 10px 12px;
+  border-radius: 12px;
   background: rgba(255, 79, 79, 0.13);
   color: #aa1f1f;
   border: 1px solid rgba(255,79,79,0.22);
+  font-size: 12px;
 }
 
-.login-preview {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  min-height: 520px;
-}
-
-.preview-topline {
-  width: 100%;
-  height: 260px;
-  border-radius: 22px;
-  background:
-    linear-gradient(145deg, rgba(23,27,53,0.92), rgba(23,27,53,0.65)),
-    repeating-linear-gradient(90deg, transparent 0 56px, rgba(255,255,255,0.08) 56px 57px);
-  margin-bottom: auto;
-}
-
-.mini-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 22px; }
-.mini-cards div { background: rgba(255,255,255,0.56); border: 1px solid var(--line); border-radius: 18px; padding: 16px; }
-.mini-cards span { display: block; color: var(--muted); font-size: 12px; margin-top: 4px; }
-
+/* Application layout */
 .app-body { display: flex; }
 
 .sidebar {
@@ -258,8 +493,10 @@ code { background: rgba(23,27,53,0.08); padding: 2px 6px; border-radius: 6px; }
 .config-list { background: rgba(255,255,255,0.6); border: 1px solid var(--line); border-radius: 16px; padding: 16px; margin: 20px 0; }
 
 @media (max-width: 900px) {
-  .login-shell { grid-template-columns: 1fr; }
-  .login-preview { min-height: auto; }
+  .login-body { padding: 20px; }
+  .login-brand-header { left: 22px; top: 20px; }
+  .ebolt-login-shell { width: min(360px, 100%); }
+  .ebolt-login-card { padding: 28px 28px 26px; }
   .stats-grid, .dashboard-grid, .settings-grid { grid-template-columns: 1fr; }
   .content-shell { padding-left: 110px; }
 }
