@@ -8,11 +8,18 @@
     "start": "node src/server.js",
     "db:init": "node scripts/init-sqlite.js"
   },
-  "keywords": ["express", "crm", "azure-sql", "entra-id", "nodejs"],
+  "keywords": [
+    "express",
+    "crm",
+    "azure-sql",
+    "entra-id",
+    "nodejs"
+  ],
   "author": "",
   "license": "MIT",
   "dependencies": {
     "@azure/identity": "^4.10.2",
+    "@azure/msal-node": "^5.2.2",
     "bcryptjs": "^3.0.2",
     "connect-sqlite3": "^0.9.16",
     "dotenv": "^16.4.7",
