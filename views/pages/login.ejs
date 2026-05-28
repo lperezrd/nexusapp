@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head') %>
+</head>
+<body class="login-body">
+  <main class="login-shell">
+    <section class="login-panel glass-card">
+      <div class="login-badge">Nexus CRM</div>
+      <h1>Welcome back</h1>
+      <p class="muted">Sign in to manage opportunities, customers, and internal CRM workflows.</p>
+
+      <% if (error) { %>
+        <div class="alert"><%= error %></div>
+      <% } %>
+
+      <form class="login-form" action="/login" method="POST">
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" placeholder="admin" autocomplete="username" required />
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="Password123!" autocomplete="current-password" required />
+
+        <button class="primary-button" type="submit">Sign in</button>
+      </form>
+
+      <div class="divider-text"><span>or</span></div>
+
+      <a class="entra-button" href="/auth/entra">
+        <span class="microsoft-grid"><i></i><i></i><i></i><i></i></span>
+        Continue with Microsoft Entra ID
+      </a>
+    </section>
+
+    <section class="login-preview glass-card">
+      <div class="preview-topline"></div>
+      <h2>Lightweight CRM workspace</h2>
+      <p>Pipeline, contacts, dashboard metrics, settings, and Azure SQL-ready data access.</p>
+      <div class="mini-cards">
+        <div><strong>Pipeline</strong><span>Coming soon</span></div>
+        <div><strong>Revenue</strong><span>Placeholder</span></div>
+        <div><strong>Tasks</strong><span>Ready for expansion</span></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

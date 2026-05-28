@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head') %>
+</head>
+<body class="app-body">
+  <%- include('../partials/sidebar') %>
+  <main class="content-shell">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">CRM Overview</p>
+        <h1>Dashboard</h1>
+        <p class="muted">Placeholder workspace for future CRM KPIs, pipeline health, activity, and revenue insights.</p>
+      </div>
+      <div class="user-chip"><%= currentUser.displayName %></div>
+    </header>
+
+    <section class="stats-grid">
+      <% stats.forEach((stat) => { %>
+        <article class="stat-card glass-card">
+          <p><%= stat.label %></p>
+          <h2><%= stat.value %></h2>
+          <span><%= stat.note %></span>
+        </article>
+      <% }) %>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="panel glass-card wide-panel">
+        <div class="panel-header">
+          <h2>Pipeline Forecast</h2>
+          <span>Placeholder</span>
+        </div>
+        <div class="chart-placeholder">
+          <div class="bar b1"></div>
+          <div class="bar b2"></div>
+          <div class="bar b3"></div>
+          <div class="bar b4"></div>
+          <div class="bar b5"></div>
+        </div>
+      </article>
+
+      <article class="panel glass-card">
+        <div class="panel-header">
+          <h2>Recent Activity</h2>
+          <span>Mock</span>
+        </div>
+        <ul class="activity-list">
+          <li><strong>Opportunity created</strong><span>Awaiting production data model</span></li>
+          <li><strong>Contact updated</strong><span>Placeholder event</span></li>
+          <li><strong>Task completed</strong><span>Placeholder event</span></li>
+        </ul>
+      </article>
+    </section>
+  </main>
+  <script src="/js/sidebar.js"></script>
+</body>
+</html>

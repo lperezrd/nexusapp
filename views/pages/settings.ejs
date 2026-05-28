@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head') %>
+</head>
+<body class="app-body">
+  <%- include('../partials/sidebar') %>
+  <main class="content-shell">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">Administration</p>
+        <h1>Settings</h1>
+        <p class="muted">Placeholder settings page for authentication, database, branding, and CRM configuration.</p>
+      </div>
+    </header>
+
+    <section class="settings-grid">
+      <article class="settings-card glass-card">
+        <h2>Database Provider</h2>
+        <p>Current local provider is controlled by <code>DB_PROVIDER</code>. Use <code>sqlite</code> for development and <code>azuresql</code> in production.</p>
+      </article>
+      <article class="settings-card glass-card">
+        <h2>Entra ID Authentication</h2>
+        <p>Configure <code>ENTRA_CLIENT_ID</code>, <code>ENTRA_TENANT_ID</code>, and <code>ENTRA_REDIRECT_URI</code> when replacing the placeholder route.</p>
+      </article>
+      <article class="settings-card glass-card">
+        <h2>Branding</h2>
+        <p>Update colors, logo, and application name from the CSS variables in <code>public/css/styles.css</code>.</p>
+      </article>
+    </section>
+  </main>
+  <script src="/js/sidebar.js"></script>
+</body>
+</html>

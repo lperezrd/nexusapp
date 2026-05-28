@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head') %>
+</head>
+<body class="login-body">
+  <main class="login-shell single">
+    <section class="login-panel glass-card">
+      <div class="login-badge">Microsoft Entra ID</div>
+      <h1>Authentication placeholder</h1>
+      <p class="muted">This route is intentionally prepared for future Entra ID integration.</p>
+      <div class="config-list">
+        <p><strong>Client ID:</strong> <%= clientId %></p>
+        <p><strong>Tenant ID:</strong> <%= tenantId %></p>
+        <p><strong>Redirect URI:</strong> <%= redirectUri %></p>
+      </div>
+      <a class="primary-button link-button" href="/">Back to login</a>
+    </section>
+  </main>
+</body>
+</html>

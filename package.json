@@ -1,0 +1,30 @@
+{
+  "name": "nexus-crm-express",
+  "version": "1.0.0",
+  "description": "Lightweight Express CRM-style application with Azure SQL production placeholder and Entra ID authentication placeholder.",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "db:init": "node scripts/init-sqlite.js"
+  },
+  "keywords": ["express", "crm", "azure-sql", "entra-id", "nodejs"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@azure/identity": "^4.10.2",
+    "bcryptjs": "^3.0.2",
+    "connect-sqlite3": "^0.9.16",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "helmet": "^8.0.0",
+    "mssql": "^11.0.1",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

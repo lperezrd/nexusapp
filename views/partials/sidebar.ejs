@@ -1,0 +1,49 @@
+<aside class="sidebar" id="sidebar">
+  <div class="brand-row">
+    <div class="brand-mark">N</div>
+    <span class="brand-name">Nexus</span>
+  </div>
+
+  <nav class="nav-section">
+    <a class="nav-link <%= currentPath === '/dashboard' ? 'active' : '' %>" href="/dashboard">
+      <span class="nav-icon">▣</span>
+      <span class="nav-label">Dashboard</span>
+    </a>
+    <a class="nav-link disabled" href="#">
+      <span class="nav-icon">◇</span>
+      <span class="nav-label">Opportunities</span>
+    </a>
+    <a class="nav-link disabled" href="#">
+      <span class="nav-icon">○</span>
+      <span class="nav-label">Contacts</span>
+    </a>
+    <a class="nav-link disabled" href="#">
+      <span class="nav-icon">□</span>
+      <span class="nav-label">Companies</span>
+    </a>
+  </nav>
+
+  <div class="nav-divider"></div>
+
+  <nav class="nav-section">
+    <a class="nav-link disabled" href="#">
+      <span class="nav-icon">✉</span>
+      <span class="nav-label">Emails</span>
+    </a>
+    <a class="nav-link disabled" href="#">
+      <span class="nav-icon">✓</span>
+      <span class="nav-label">Tasks</span>
+    </a>
+    <a class="nav-link <%= currentPath === '/settings' ? 'active' : '' %>" href="/settings">
+      <span class="nav-icon">⚙</span>
+      <span class="nav-label">Settings</span>
+    </a>
+  </nav>
+
+  <form class="logout-form" action="/logout" method="POST">
+    <button type="submit" class="nav-link logout-button">
+      <span class="nav-icon">↩</span>
+      <span class="nav-label">Logout</span>
+    </button>
+  </form>
+</aside>
