@@ -3,7 +3,7 @@ const path = require('path');
 const sqlite3 = require('sqlite3');
 const { open } = require('sqlite');
 
-const dbPath = process.env.SQLITE_DB_PATH || './data/dev.sqlite';
+const dbPath = process.env.SQLITE_DB_PATH || path.join(__dirname, '..', '..', 'data', 'dev.sqlite');
 let db;
 
 async function getDb() {

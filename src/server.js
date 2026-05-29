@@ -12,6 +12,7 @@ const { ensureDatabase } = require('./db');
 
 const app = express();
 const port = process.env.PORT || 3000;
+app.set('trust proxy', 1);
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '..', 'views'));
@@ -23,7 +24,7 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.use(
   session({
-    store: new SQLiteStore({ db: 'sessions.sqlite', dir: './data' }),
+    store: new SQLiteStore({ db: 'sessions.sqlite', dir: path.join(__dirname, '..', 'data') }),
     secret: process.env.SESSION_SECRET || 'dev-secret-change-me',
     resave: false,
     saveUninitialized: false,
